@@ -1,4 +1,4 @@
-package live_exam;
+package exam_week_2ive_exam;
 
 public class question_1 {
     public static void main(String[] args) {
