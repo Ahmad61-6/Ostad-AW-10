@@ -1,4 +1,4 @@
-package exam_week_2;
+package exam_week_2_assignment;
 
 public class ShapeApplication {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package exam_week_2;
+package exam_week_2_assignment;
 
 public class BankApplication{
 public static void main(String args[]){
