@@ -2,41 +2,57 @@ package live_exam;
 
 public class question_1 {
     public static void main(String[] args) {
-        Employee emp_1 = new Employee();
-
-        emp_1.setEmployee_id("1111");
-        emp_1.setEmployee_name("Ayman");
+        //Employee objects...using constructor to set the employee info
+        Employee employee_1 = new Employee(1, "Ayman", 75000.00);
+        Employee employee_2 = new Employee(2, "Ahmad", 82000.00);
         
-        emp_1.showEmployeeInfo();
+        // accessing the information through getter method
+        System.out.println("Employee ID: " + employee_1.getEmployeeId());
+        System.out.println("Employee Name: " + employee_1.getEmployeeName());
+        System.out.println("Employee Salary: $" + employee_1.getEmployeeSalary());
+
+        System.out.println("Employee ID: " + employee_2.getEmployeeId());
+        System.out.println("Employee Name: " + employee_2.getEmployeeName());
+        System.out.println("Employee Salary: " + employee_2.getEmployeeSalary()+" BDT");
+
+        // using setter method to modify the employee info
+        employee_1.setEmployeeId(3);
+        employee_1.setEmployeeName("Alice Smith");
+
+        // Accessing employee details through getter method
+        System.out.println("Modified Employee ID: " + employee_1.getEmployeeId());
+        System.out.println("Modified Employee Name: " + employee_1.getEmployeeName());
+        System.out.println("Employee Salary: " + employee_1.getEmployeeSalary()+"BDT");
     }
 }
 
-class Employee{
-    private String employee_id;
+ class Employee {
+    private int employee_id;
     private String employee_name;
-    private double employee_salary = 750000.00;
+    private double employee_salary;
 
-    public String getEmployee_id() {
+    public Employee(int id, String name, double salary) {
+        this.employee_id = id;
+        this.employee_name = name;
+        this.employee_salary = salary;
+    }
+
+    public int getEmployeeId() {
         return employee_id;
     }
-    public void setEmployee_id(String employee_id) {
+
+    public void setEmployeeId(int employee_id) {
         this.employee_id = employee_id;
     }
-    public String getEmployee_name() {
+    public String getEmployeeName() {
         return employee_name;
     }
 
-    public void setEmployee_name(String employee_name) {
+    public void setEmployeeName(String employee_name) {
         this.employee_name = employee_name;
     }
-
-    public String getEmployee_salary() {
-        return String.format("%.2f",employee_salary);
+    public String getEmployeeSalary() {
+        return String.format("%.2f", employee_salary);
     }
-public void showEmployeeInfo(){
-    System.out.println("Employee_id: "+getEmployee_id());
-    System.out.println("Employee_name: "+getEmployee_name());
-    System.out.println("Employee_salary: "+ getEmployee_salary());
 }
-    
-}
+
